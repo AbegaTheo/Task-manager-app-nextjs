@@ -67,7 +67,7 @@ export default function RecentTasks({
     );
 
   // Afficher les tâches (vous pouvez trier ou limiter ici si nécessaire)
-  const tasksToDisplay = tasks.slice().sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 5); // Exemple: les 5 plus récentes
+  const tasksToDisplay = tasks.slice().sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 4); // Exemple: les 5 plus récentes
 
   return (
     <div className="bg-green-200 rounded-3xl shadow p-4 flex-1 h-full">

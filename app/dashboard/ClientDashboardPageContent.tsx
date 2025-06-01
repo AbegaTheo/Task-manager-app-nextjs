@@ -69,7 +69,6 @@ export default function ClientDashboardPageContent({ userName }: ClientDashboard
   // Gère l'ajout d'une nouvelle tâche
   const handleTaskAdded = (newTask: Task) => {
     setTasks(prevTasks => [...prevTasks, newTask]);
-    toast.success("Tâche ajoutée !");
   };
 
   // Gère la complétion d'une tâche
@@ -123,7 +122,7 @@ export default function ClientDashboardPageContent({ userName }: ClientDashboard
            throw new Error(`Error deleting task: ${res.statusText}`);
         }
         setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
-        toast.error("Tâche supprimée !");
+        toast.error("Tâche supprimée avec succès !");
       } catch (err: any) {
         console.error("Failed to delete task:", err);
         toast.error("Erreur lors de la suppression.");
@@ -148,7 +147,7 @@ export default function ClientDashboardPageContent({ userName }: ClientDashboard
            task.id === id ? updatedTask : task
          )
        );
-       toast.success("Tâche modifiée !");
+       toast.success("Tâche modifiée avec succès !");
      } catch (err: any) {
        console.error("Failed to save task edit:", err);
        toast.error("Erreur lors de la modification.");
@@ -206,21 +205,27 @@ export default function ClientDashboardPageContent({ userName }: ClientDashboard
   return (
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar /> {/* Sidebar peut être serveur ou client */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-5">
         <HeaderDashboard userName={userName} />
         {/* Passer les statistiques calculées à partir de l'état */}
         <StatsDashboard total={total} completed={completed} pending={pending} />
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-5">
           <div className="p-2 flex-1 h-full">
             {/* Ajouter la barre de filtres ici */}
             {/* Passer la fonction de gestion des filtres */}
-            <div className="mb-6"> {/* Ajouter une marge au-dessus */}
-               <TaskFilters onFilter={handleDashboardFilterChange} />
+            <div className="mb-18">
+              {" "}
+              {/* Ajouter une marge au-dessus */}
+              <TaskFilters onFilter={handleDashboardFilterChange} />
             </div>
-            
-            <h3 className="font-bold text-center text-2xl px-4 mb-2">Ajouter une nouvelle tâche</h3>
-            {/* Passer la fonction handleTaskAdded à TaskForm */}
-            <TaskForm onTaskAdded={handleTaskAdded} />
+
+            <div className="flex flex-col gap-4">
+              <h3 className="font-bold text-center text-2xl px-4 mb-2">
+                Ajouter une nouvelle tâche
+              </h3>
+              {/* Passer la fonction handleTaskAdded à TaskForm */}
+              <TaskForm onTaskAdded={handleTaskAdded} />
+            </div>
           </div>
 
           {/* Passer la liste FILTRÉE et LIMITÉE à RecentTasks */}
@@ -231,7 +236,6 @@ export default function ClientDashboardPageContent({ userName }: ClientDashboard
             onDeleteTask={handleDeleteTask}
             onSaveEdit={handleSaveEdit}
           />
-
         </div>
       </main>
     </div>

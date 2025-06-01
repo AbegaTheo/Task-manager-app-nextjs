@@ -19,8 +19,8 @@ export default function HeaderDashboard({ userName }: HeaderDashboardProps) {
   // const userName = session?.user?.name || session?.user?.email || "Invité";
 
   return (
-    <header className="flex justify-between items-center mb-8">
-      <h2 className="text-5xl font-bold flex items-center gap-2">
+    <header className="flex justify-between items-center mb-4">
+      <h2 className="text-5xl flex items-center gap-2 font-extrabold mb-4 text-indigo-700 drop-shadow">
         Bienvenue, {userName} <span>👋</span>
       </h2>
       <Clock /> {/* Assurez-vous que Clock.tsx est aussi un composant client ('use client') */}

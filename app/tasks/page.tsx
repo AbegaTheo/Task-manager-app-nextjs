@@ -156,7 +156,7 @@ export default function TasksPage() {
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar /> {/* Sidebar peut être serveur ou client */}
       <main className="flex-1 p-8">
-        <h1 className="text-5xl font-bold mb-8">Mes Tâches</h1>
+        <h1 className="text-5xl font-extrabold mb-8 text-indigo-700 drop-shadow">Mes Tâches</h1>
         <div className="mb-8">
           <h3 className="text-3xl text-center font-bold mb-5">Ajouter une nouvelle tâche</h3>
           {/* Passer la fonction handleTaskAdded à TaskForm */}

@@ -10,8 +10,12 @@ export default async function HistoryPage() {
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
       <main className="flex-1 p-8">
-        <h1 className="text-2xl font-bold mb-4">Historiques</h1>
-        <p className="mb-6">Bienvenue, {userName} !</p>
+        <h1 className="text-5xl font-extrabold mb-5 text-indigo-700 drop-shadow">
+          Historiques
+        </h1>
+        <p className="mb-6 text-indigo-700 font-extrabold drop-shadow">
+          Bienvenue, {userName} !
+        </p>
         {/* Ici tu pourras afficher l’historique des actions sur les tâches */}
         <div className="bg-white rounded shadow p-4">
           <p>Historique des actions à venir...</p>

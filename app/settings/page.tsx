@@ -11,8 +11,12 @@ export default async function SettingsPage() {
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
       <main className="flex-1 p-8">
-        <h1 className="text-2xl font-bold mb-4">Paramètres</h1>
-        <p className="mb-6">Bienvenue, {userName} !</p>
+        <h1 className="text-5xl font-extrabold mb-5 text-indigo-700 drop-shadow">
+          Paramètres
+        </h1>
+        <p className="mb-6 font-extrabold text-indigo-700 drop-shadow">
+          Bienvenue, {userName} !
+        </p>
         <div className="bg-white rounded shadow p-6 max-w-xl">
           <h2 className="text-xl font-semibold mb-4">Profil utilisateur</h2>
           <div className="mb-4">
