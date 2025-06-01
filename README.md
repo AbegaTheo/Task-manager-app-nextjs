@@ -36,7 +36,7 @@ Dans un monde où les tâches s'accumulent et les post-its volent partout 🌀, 
 - ✅ Édition et suppression des tâches
 - 📊 Statistiques des tâches par utilisateur
 - 🎨 Interface moderne avec **Tailwind CSS** et **icônes**
-- 💾 Stockage des données avec **SQLite + Prisma**
+- 💾 Stockage des données avec **MySQL + Prisma**
 - 🎯 Dashboard personnel (privé) pour chaque utilisateur
 
 ---
@@ -49,6 +49,7 @@ Dans un monde où les tâches s'accumulent et les post-its volent partout 🌀, 
 - [NextAuth.js](https://next-auth.js.org/)
 - [Prisma ORM](https://www.prisma.io/)
 - [SQLite](https://www.sqlite.org/)
+- [MySQL](https://www.mysql.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ---
